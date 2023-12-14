@@ -1,0 +1,20 @@
+created:
+    - database/factories/PostFactory.php
+    - database/factories/CategoryFactory.php
+    - database/factories/TagFactory.php
+    - database/factories/CommentFactory.php
+    - database/migrations/2023_12_14_021129_create_posts_table.php
+    - database/migrations/2023_12_14_021130_create_categories_table.php
+    - database/migrations/2023_12_14_021131_create_tags_table.php
+    - database/migrations/2023_12_14_021132_create_comments_table.php
+    - database/migrations/2023_12_14_021133_create_category_post_table.php
+    - database/migrations/2023_12_14_021134_create_post_tag_table.php
+    - app/Models/Post.php
+    - app/Models/Category.php
+    - app/Models/Tag.php
+    - app/Models/Comment.php
+models:
+    Post: { user_id: 'id:User', title: 'string:400', slug: 'string:400 unique', image: 'string:255 nullable', excerpt: 'string:255 nullable', content: longtext, featured: 'boolean false', published_at: 'nullable timestamp', relationships: { belongsTo: User, belongsToMany: 'Category,Tag', hasMany: Comment } }
+    Category: { name: 'string:255', slug: 'string:255 unique', relationships: { belongsToMany: Post } }
+    Tag: { name: 'string:255', slug: 'string:255 unique', relationships: { belongsToMany: Post } }
+    Comment: { user_id: 'id:User', post_id: 'id:Post', content: 'string:255', published_at: 'timestamp nullable', approved: 'boolean false', spam: 'boolean false', relationships: { belongsTo: 'User,Post' } }
