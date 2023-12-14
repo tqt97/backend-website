@@ -1,0 +1,36 @@
+models:
+  Post:
+    user_id: id:User
+    title: string:400
+    slug: string:400 unique
+    image: string:255 nullable
+    excerpt: string:255 nullable
+    content: longtext
+    featured: boolean false
+    published_at: nullable timestamp
+    relationships:
+      belongsTo: User
+      belongsToMany: Category,Tag
+      hasMany: Comment
+  
+  Category:
+    name: string:255
+    slug: string:255 unique
+    relationships:
+      belongsToMany: Post
+
+  Tag:
+    name: string:255
+    slug: string:255 unique
+    relationships:
+      belongsToMany: Post
+
+  Comment:
+    user_id: id:User
+    post_id: id:Post
+    content: longtext
+    published_at: timestamp nullable
+    approved: boolean false
+    spam: boolean false
+    relationships:
+      belongsTo: User,Post    
