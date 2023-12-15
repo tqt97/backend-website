@@ -1,0 +1,7 @@
+{
+    "roles": "Vai trò",
+    "users": "Người dùng",
+    "settings": "Thiết lập",
+    "the {label} field confirmation does not match." : "The {label} das",
+    "update_success" : "Cập nhật thành công"
+}
