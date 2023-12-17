@@ -67,9 +67,13 @@ class AdminPanelProvider extends PanelProvider
             ->sidebarFullyCollapsibleOnDesktop()
             ->navigationGroups([
                 NavigationGroup::make()
-                    ->label(fn(): string => __('users'))
-//                    ->icon('heroicon-o-user-circle')
+                    ->label(fn(): string => __('blogs'))
+                    ->icon('heroicon-o-book-open')
                     ->collapsed(),
+                NavigationGroup::make()
+                    ->label(fn(): string => __('users'))
+                    ->collapsed(),
+
             ])
             ->plugins([
                 FilamentShieldPlugin::make()

@@ -26,6 +26,9 @@ class UserResource extends Resource
 
     protected static int $globalSearchResultsLimit = 5;
 
+    protected static ?int $navigationSort = 7;
+
+
     public static function getNavigationGroup(): ?string
     {
         return __('users');
