@@ -3,5 +3,14 @@
     "users": "Người dùng",
     "settings": "Thiết lập",
     "the {label} field confirmation does not match." : "The {label} das",
-    "update_success" : "Cập nhật thành công"
+    "update_success" : "Cập nhật thành công",
+    "blogs": "Bài viết",
+    "tags": "Thẻ",
+    "categories": "Danh mục",
+    "posts": "Bài đăng",
+    "comments": "Bình luận",
+    "section_main_content" : "Nội dung chính",
+    "section_main_content_description": "Những trường có dấu * là những trường bắt buộc nhập",
+    "section_meta_data": "Thuộc tính",
+    "section_meta_data_description": "Những trường có dấu * là những trường bắt buộc"
 }
