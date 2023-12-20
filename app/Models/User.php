@@ -20,11 +20,11 @@ class User extends Authenticatable implements FilamentUser
 {
     use HasApiTokens;
     use HasFactory;
+    use HasPanelShield;
     use HasProfilePhoto;
+    use HasRoles;
     use Notifiable;
     use TwoFactorAuthenticatable;
-    use HasRoles;
-    use HasPanelShield;
 
     /**
      * The attributes that are mass assignable.
@@ -72,6 +72,7 @@ class User extends Authenticatable implements FilamentUser
         if ($panel->getId() === 'admin') {
             return $this->hasRole('super_admin');
         }
+
         return false;
     }
 
@@ -85,7 +86,8 @@ class User extends Authenticatable implements FilamentUser
         return $this->hasMany(Comment::class);
     }
 
-    public function posts(): HasMany{
+    public function posts(): HasMany
+    {
         return $this->hasMany(Post::class);
     }
 

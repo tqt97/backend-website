@@ -3,7 +3,6 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\UserResource\Pages;
-use App\Filament\Resources\UserResource\RelationManagers;
 use App\Models\User;
 use Filament\Forms;
 use Filament\Forms\Components\Tabs;
@@ -20,14 +19,13 @@ class UserResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-user';
 
-//    protected static ?string $navigationGroup = 'settings';
+    //    protected static ?string $navigationGroup = 'settings';
 
     protected static ?string $recordTitleAttribute = 'name';
 
     protected static int $globalSearchResultsLimit = 5;
 
     protected static ?int $navigationSort = 7;
-
 
     public static function getNavigationGroup(): ?string
     {
@@ -143,7 +141,7 @@ class UserResource extends Resource
             ])
             ->groupingSettingsInDropdownOnDesktop()
             ->groupRecordsTriggerAction(
-                fn(Tables\Actions\Action $action) => $action
+                fn (Tables\Actions\Action $action) => $action
                     ->button()
                     ->label(__('user.tables.group_records')),
             );
@@ -186,9 +184,9 @@ class UserResource extends Resource
 //                                    ->disabled('edit')
                                     ->password()
                                     ->required()
-                                    ->dehydrateStateUsing(fn($state) => Hash::make($state))
-                                    ->dehydrated(fn($state) => filled($state))
-                                    ->required(fn(string $context): bool => $context === 'create')
+                                    ->dehydrateStateUsing(fn ($state) => Hash::make($state))
+                                    ->dehydrated(fn ($state) => filled($state))
+                                    ->required(fn (string $context): bool => $context === 'create')
                                     ->minLength(8)
                                     ->maxLength(255),
                                 Forms\Components\Select::make('roles')
@@ -199,9 +197,8 @@ class UserResource extends Resource
                                     ->preload()
                                     ->multiple()
                                     ->relationship('roles', 'name')
-                                    ->columnSpan('full')
-                            ])
-                        ,
+                                    ->columnSpan('full'),
+                            ]),
                         Tabs\Tab::make(__('user.signup_2fa'))
                             ->icon('heroicon-m-key')
                             ->schema([

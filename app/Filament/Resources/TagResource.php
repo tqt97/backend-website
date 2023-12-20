@@ -3,7 +3,6 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\TagResource\Pages;
-use App\Filament\Resources\TagResource\RelationManagers;
 use App\Models\Tag;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -17,7 +16,7 @@ class TagResource extends Resource
 {
     protected static ?string $model = Tag::class;
 
-//    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    //    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     protected static ?string $navigationGroup = 'blogs';
 
@@ -26,7 +25,6 @@ class TagResource extends Resource
     protected static int $globalSearchResultsLimit = 5;
 
     protected static ?int $navigationSort = 3;
-
 
     public static function getNavigationGroup(): ?string
     {
@@ -124,7 +122,7 @@ class TagResource extends Resource
             ])
             ->groupingSettingsInDropdownOnDesktop()
             ->groupRecordsTriggerAction(
-                fn(Tables\Actions\Action $action) => $action
+                fn (Tables\Actions\Action $action) => $action
                     ->button()
                     ->label(__('resources/tables.group_records')),
             );

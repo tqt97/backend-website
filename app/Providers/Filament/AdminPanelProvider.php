@@ -67,11 +67,11 @@ class AdminPanelProvider extends PanelProvider
             ->sidebarFullyCollapsibleOnDesktop()
             ->navigationGroups([
                 NavigationGroup::make()
-                    ->label(fn(): string => __('blogs'))
+                    ->label(fn (): string => __('blogs'))
                     ->icon('heroicon-o-book-open')
                     ->collapsed(),
                 NavigationGroup::make()
-                    ->label(fn(): string => __('users'))
+                    ->label(fn (): string => __('users'))
                     ->collapsed(),
 
             ])
@@ -80,7 +80,7 @@ class AdminPanelProvider extends PanelProvider
                     ->gridColumns([
                         'default' => 1,
                         'sm' => 2,
-                        'lg' => 3
+                        'lg' => 3,
                     ])
                     ->sectionColumnSpan(1)
                     ->checkboxListColumns([

@@ -3,7 +3,6 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\CategoryResource\Pages;
-use App\Filament\Resources\CategoryResource\RelationManagers;
 use App\Models\Category;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -17,7 +16,7 @@ class CategoryResource extends Resource
 {
     protected static ?string $model = Category::class;
 
-//    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    //    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
     protected static ?string $navigationGroup = 'blogs';
 
     protected static ?string $recordTitleAttribute = 'name';
@@ -25,7 +24,6 @@ class CategoryResource extends Resource
     protected static int $globalSearchResultsLimit = 5;
 
     protected static ?int $navigationSort = 2;
-
 
     public static function getNavigationGroup(): ?string
     {
@@ -70,8 +68,7 @@ class CategoryResource extends Resource
                             ->live(onBlur: false, debounce: 500)
                             ->afterStateUpdated(function (string $operation, ?string $state, Set $set) {
                                 $set('slug', Str::slug($state));
-                            })
-                        ,
+                            }),
                         Forms\Components\TextInput::make('slug')
                             ->label(__('categories.slug'))
                             ->hint(__('categories.slug_hint'))
@@ -140,7 +137,7 @@ class CategoryResource extends Resource
             ])
             ->groupingSettingsInDropdownOnDesktop()
             ->groupRecordsTriggerAction(
-                fn(Tables\Actions\Action $action) => $action
+                fn (Tables\Actions\Action $action) => $action
                     ->button()
                     ->label(__('user.tables.group_records')),
             );

@@ -1,0 +1,316 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Parameter \\#1 \\$photo of method App\\\\Models\\\\User\\:\\:updateProfilePhoto\\(\\) expects Illuminate\\\\Http\\\\UploadedFile, string given\\.$#"
+			count: 1
+			path: app/Actions/Fortify/UpdateUserProfileInformation.php
+
+		-
+			message: "#^Call to an undefined method App\\\\Models\\\\User\\:\\:ownedTeams\\(\\)\\.$#"
+			count: 1
+			path: app/Actions/Jetstream/CreateTeam.php
+
+		-
+			message: "#^Call to an undefined method App\\\\Models\\\\User\\:\\:switchTeam\\(\\)\\.$#"
+			count: 1
+			path: app/Actions/Jetstream/CreateTeam.php
+
+		-
+			message: "#^Parameter \\#1 \\$invitation of class Laravel\\\\Jetstream\\\\Mail\\\\TeamInvitation constructor expects Laravel\\\\Jetstream\\\\TeamInvitation, Illuminate\\\\Database\\\\Eloquent\\\\Model given\\.$#"
+			count: 1
+			path: app/Actions/Jetstream/InviteTeamMember.php
+
+		-
+			message: "#^Cannot access property \\$id on Illuminate\\\\Database\\\\Eloquent\\\\Model\\|null\\.$#"
+			count: 1
+			path: app/Actions/Jetstream/RemoveTeamMember.php
+
+		-
+			message: "#^Parameter \\#1 \\$title of static method Illuminate\\\\Support\\\\Str\\:\\:slug\\(\\) expects string, string\\|null given\\.$#"
+			count: 1
+			path: app/Filament/Resources/CategoryResource-bk.php
+
+		-
+			message: "#^Parameter \\#1 \\$title of static method Illuminate\\\\Support\\\\Str\\:\\:slug\\(\\) expects string, string\\|null given\\.$#"
+			count: 1
+			path: app/Filament/Resources/CategoryResource.php
+
+		-
+			message: "#^Method App\\\\Filament\\\\Resources\\\\PostResource\\:\\:getEloquentQuery\\(\\) return type with generic class Illuminate\\\\Database\\\\Eloquent\\\\Builder does not specify its types\\: TModelClass$#"
+			count: 1
+			path: app/Filament/Resources/PostResource.php
+
+		-
+			message: "#^Parameter \\#1 \\$title of static method Illuminate\\\\Support\\\\Str\\:\\:slug\\(\\) expects string, string\\|null given\\.$#"
+			count: 3
+			path: app/Filament/Resources/PostResource.php
+
+		-
+			message: "#^Parameter \\#1 \\$title of static method Illuminate\\\\Support\\\\Str\\:\\:slug\\(\\) expects string, string\\|null given\\.$#"
+			count: 1
+			path: app/Filament/Resources/TagResource-bk.php
+
+		-
+			message: "#^Parameter \\#1 \\$title of static method Illuminate\\\\Support\\\\Str\\:\\:slug\\(\\) expects string, string\\|null given\\.$#"
+			count: 1
+			path: app/Filament/Resources/TagResource.php
+
+		-
+			message: "#^Method App\\\\Livewire\\\\Blog\\\\CommentPost\\:\\:comments\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Livewire/Blog/CommentPost.php
+
+		-
+			message: "#^Method App\\\\Livewire\\\\Blog\\\\CommentPost\\:\\:postComment\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Livewire/Blog/CommentPost.php
+
+		-
+			message: "#^Method App\\\\Livewire\\\\Blog\\\\CommentPost\\:\\:render\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Livewire/Blog/CommentPost.php
+
+		-
+			message: "#^Using nullsafe method call on non\\-nullable type App\\\\Models\\\\Post\\. Use \\-\\> instead\\.$#"
+			count: 1
+			path: app/Livewire/Blog/CommentPost.php
+
+		-
+			message: "#^Using nullsafe property access on non\\-nullable type \\$this\\(App\\\\Livewire\\\\Blog\\\\CommentPost\\)\\. Use \\-\\> instead\\.$#"
+			count: 1
+			path: app/Livewire/Blog/CommentPost.php
+
+		-
+			message: "#^Cannot call method hasLiked\\(\\) on App\\\\Models\\\\User\\|null\\.$#"
+			count: 1
+			path: app/Livewire/Blog/LikeButton.php
+
+		-
+			message: "#^Cannot call method likes\\(\\) on App\\\\Models\\\\User\\|null\\.$#"
+			count: 2
+			path: app/Livewire/Blog/LikeButton.php
+
+		-
+			message: "#^Method App\\\\Livewire\\\\Blog\\\\LikeButton\\:\\:render\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Livewire/Blog/LikeButton.php
+
+		-
+			message: "#^Method App\\\\Livewire\\\\Blog\\\\LikeButton\\:\\:toggleLike\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Livewire/Blog/LikeButton.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Livewire\\\\Blog\\\\ListPost\\:\\:\\$activeCategory\\.$#"
+			count: 1
+			path: app/Livewire/Blog/ListPost.php
+
+		-
+			message: "#^Method App\\\\Livewire\\\\Blog\\\\ListPost\\:\\:activeCategory\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Livewire/Blog/ListPost.php
+
+		-
+			message: "#^Method App\\\\Livewire\\\\Blog\\\\ListPost\\:\\:posts\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Livewire/Blog/ListPost.php
+
+		-
+			message: "#^Method App\\\\Livewire\\\\Blog\\\\ListPost\\:\\:render\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Livewire/Blog/ListPost.php
+
+		-
+			message: "#^Method App\\\\Livewire\\\\Blog\\\\ListPost\\:\\:updateSearch\\(\\) has parameter \\$search with no type specified\\.$#"
+			count: 1
+			path: app/Livewire/Blog/ListPost.php
+
+		-
+			message: "#^Strict comparison using \\=\\=\\= between non\\-empty\\-string and null will always evaluate to false\\.$#"
+			count: 1
+			path: app/Livewire/Blog/ListPost.php
+
+		-
+			message: "#^Method App\\\\Models\\\\Category\\:\\:posts\\(\\) return type with generic class Illuminate\\\\Database\\\\Eloquent\\\\Relations\\\\BelongsToMany does not specify its types\\: TRelatedModel$#"
+			count: 1
+			path: app/Models/Category.php
+
+		-
+			message: "#^PHPDoc type array of property App\\\\Models\\\\Category\\:\\:\\$casts is not covariant with PHPDoc type array\\<string, string\\> of overridden property Illuminate\\\\Database\\\\Eloquent\\\\Model\\:\\:\\$casts\\.$#"
+			count: 1
+			path: app/Models/Category.php
+
+		-
+			message: "#^PHPDoc type array of property App\\\\Models\\\\Category\\:\\:\\$fillable is not covariant with PHPDoc type array\\<string\\> of overridden property Illuminate\\\\Database\\\\Eloquent\\\\Model\\:\\:\\$fillable\\.$#"
+			count: 1
+			path: app/Models/Category.php
+
+		-
+			message: "#^Method App\\\\Models\\\\Comment\\:\\:post\\(\\) return type with generic class Illuminate\\\\Database\\\\Eloquent\\\\Relations\\\\BelongsTo does not specify its types\\: TRelatedModel, TChildModel$#"
+			count: 1
+			path: app/Models/Comment.php
+
+		-
+			message: "#^Method App\\\\Models\\\\Comment\\:\\:user\\(\\) return type with generic class Illuminate\\\\Database\\\\Eloquent\\\\Relations\\\\BelongsTo does not specify its types\\: TRelatedModel, TChildModel$#"
+			count: 1
+			path: app/Models/Comment.php
+
+		-
+			message: "#^PHPDoc type array of property App\\\\Models\\\\Comment\\:\\:\\$casts is not covariant with PHPDoc type array\\<string, string\\> of overridden property Illuminate\\\\Database\\\\Eloquent\\\\Model\\:\\:\\$casts\\.$#"
+			count: 1
+			path: app/Models/Comment.php
+
+		-
+			message: "#^PHPDoc type array of property App\\\\Models\\\\Comment\\:\\:\\$fillable is not covariant with PHPDoc type array\\<string\\> of overridden property Illuminate\\\\Database\\\\Eloquent\\\\Model\\:\\:\\$fillable\\.$#"
+			count: 1
+			path: app/Models/Comment.php
+
+		-
+			message: "#^Cannot access offset 'content' on mixed\\.$#"
+			count: 1
+			path: app/Models/Post.php
+
+		-
+			message: "#^Cannot call method diffForHumans\\(\\) on Carbon\\\\Carbon\\|null\\.$#"
+			count: 1
+			path: app/Models/Post.php
+
+		-
+			message: "#^Method App\\\\Models\\\\Post\\:\\:categories\\(\\) return type with generic class Illuminate\\\\Database\\\\Eloquent\\\\Relations\\\\BelongsToMany does not specify its types\\: TRelatedModel$#"
+			count: 1
+			path: app/Models/Post.php
+
+		-
+			message: "#^Method App\\\\Models\\\\Post\\:\\:comments\\(\\) return type with generic class Illuminate\\\\Database\\\\Eloquent\\\\Relations\\\\HasMany does not specify its types\\: TRelatedModel$#"
+			count: 1
+			path: app/Models/Post.php
+
+		-
+			message: "#^Method App\\\\Models\\\\Post\\:\\:getThumbnail\\(\\) should return string but returns string\\|null\\.$#"
+			count: 1
+			path: app/Models/Post.php
+
+		-
+			message: "#^Method App\\\\Models\\\\Post\\:\\:likes\\(\\) return type with generic class Illuminate\\\\Database\\\\Eloquent\\\\Relations\\\\BelongsToMany does not specify its types\\: TRelatedModel$#"
+			count: 1
+			path: app/Models/Post.php
+
+		-
+			message: "#^Method App\\\\Models\\\\Post\\:\\:publishedDiffForHumans\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Models/Post.php
+
+		-
+			message: "#^Method App\\\\Models\\\\Post\\:\\:scopeFeatured\\(\\) has parameter \\$query with generic class Illuminate\\\\Database\\\\Eloquent\\\\Builder but does not specify its types\\: TModelClass$#"
+			count: 1
+			path: app/Models/Post.php
+
+		-
+			message: "#^Method App\\\\Models\\\\Post\\:\\:scopePopular\\(\\) has parameter \\$query with generic class Illuminate\\\\Database\\\\Eloquent\\\\Builder but does not specify its types\\: TModelClass$#"
+			count: 1
+			path: app/Models/Post.php
+
+		-
+			message: "#^Method App\\\\Models\\\\Post\\:\\:scopePublished\\(\\) has parameter \\$query with generic class Illuminate\\\\Database\\\\Eloquent\\\\Builder but does not specify its types\\: TModelClass$#"
+			count: 1
+			path: app/Models/Post.php
+
+		-
+			message: "#^Method App\\\\Models\\\\Post\\:\\:scopeSearch\\(\\) has parameter \\$query with generic class Illuminate\\\\Database\\\\Eloquent\\\\Builder but does not specify its types\\: TModelClass$#"
+			count: 1
+			path: app/Models/Post.php
+
+		-
+			message: "#^Method App\\\\Models\\\\Post\\:\\:scopeWithCategory\\(\\) has parameter \\$query with generic class Illuminate\\\\Database\\\\Eloquent\\\\Builder but does not specify its types\\: TModelClass$#"
+			count: 1
+			path: app/Models/Post.php
+
+		-
+			message: "#^Method App\\\\Models\\\\Post\\:\\:tags\\(\\) return type with generic class Illuminate\\\\Database\\\\Eloquent\\\\Relations\\\\BelongsToMany does not specify its types\\: TRelatedModel$#"
+			count: 1
+			path: app/Models/Post.php
+
+		-
+			message: "#^Method App\\\\Models\\\\Post\\:\\:timeToRead\\(\\) return type with generic class Illuminate\\\\Database\\\\Eloquent\\\\Casts\\\\Attribute does not specify its types\\: TGet, TSet$#"
+			count: 1
+			path: app/Models/Post.php
+
+		-
+			message: "#^Method App\\\\Models\\\\Post\\:\\:user\\(\\) return type with generic class Illuminate\\\\Database\\\\Eloquent\\\\Relations\\\\BelongsTo does not specify its types\\: TRelatedModel, TChildModel$#"
+			count: 1
+			path: app/Models/Post.php
+
+		-
+			message: "#^PHPDoc type array of property App\\\\Models\\\\Post\\:\\:\\$casts is not covariant with PHPDoc type array\\<string, string\\> of overridden property Illuminate\\\\Database\\\\Eloquent\\\\Model\\:\\:\\$casts\\.$#"
+			count: 1
+			path: app/Models/Post.php
+
+		-
+			message: "#^PHPDoc type array of property App\\\\Models\\\\Post\\:\\:\\$fillable is not covariant with PHPDoc type array\\<string\\> of overridden property Illuminate\\\\Database\\\\Eloquent\\\\Model\\:\\:\\$fillable\\.$#"
+			count: 1
+			path: app/Models/Post.php
+
+		-
+			message: "#^Parameter \\#1 \\$content of method App\\\\Models\\\\Post\\:\\:getEstimateReadingTime\\(\\) expects string, mixed given\\.$#"
+			count: 1
+			path: app/Models/Post.php
+
+		-
+			message: "#^Parameter \\#1 \\$haystack of function str_contains expects string, string\\|null given\\.$#"
+			count: 2
+			path: app/Models/Post.php
+
+		-
+			message: "#^Method App\\\\Models\\\\Tag\\:\\:posts\\(\\) return type with generic class Illuminate\\\\Database\\\\Eloquent\\\\Relations\\\\BelongsToMany does not specify its types\\: TRelatedModel$#"
+			count: 1
+			path: app/Models/Tag.php
+
+		-
+			message: "#^PHPDoc type array of property App\\\\Models\\\\Tag\\:\\:\\$casts is not covariant with PHPDoc type array\\<string, string\\> of overridden property Illuminate\\\\Database\\\\Eloquent\\\\Model\\:\\:\\$casts\\.$#"
+			count: 1
+			path: app/Models/Tag.php
+
+		-
+			message: "#^PHPDoc type array of property App\\\\Models\\\\Tag\\:\\:\\$fillable is not covariant with PHPDoc type array\\<string\\> of overridden property Illuminate\\\\Database\\\\Eloquent\\\\Model\\:\\:\\$fillable\\.$#"
+			count: 1
+			path: app/Models/Tag.php
+
+		-
+			message: "#^Method App\\\\Models\\\\TeamInvitation\\:\\:team\\(\\) return type with generic class Illuminate\\\\Database\\\\Eloquent\\\\Relations\\\\BelongsTo does not specify its types\\: TRelatedModel, TChildModel$#"
+			count: 1
+			path: app/Models/TeamInvitation.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Models\\\\User\\:\\:\\$avatar_url\\.$#"
+			count: 1
+			path: app/Models/User.php
+
+		-
+			message: "#^Method App\\\\Models\\\\User\\:\\:comments\\(\\) return type with generic class Illuminate\\\\Database\\\\Eloquent\\\\Relations\\\\HasMany does not specify its types\\: TRelatedModel$#"
+			count: 1
+			path: app/Models/User.php
+
+		-
+			message: "#^Method App\\\\Models\\\\User\\:\\:likes\\(\\) return type with generic class Illuminate\\\\Database\\\\Eloquent\\\\Relations\\\\BelongsToMany does not specify its types\\: TRelatedModel$#"
+			count: 1
+			path: app/Models/User.php
+
+		-
+			message: "#^Method App\\\\Models\\\\User\\:\\:posts\\(\\) return type with generic class Illuminate\\\\Database\\\\Eloquent\\\\Relations\\\\HasMany does not specify its types\\: TRelatedModel$#"
+			count: 1
+			path: app/Models/User.php
+
+		-
+			message: "#^Call to an undefined method App\\\\Models\\\\User\\:\\:belongsToTeam\\(\\)\\.$#"
+			count: 1
+			path: app/Policies/TeamPolicy.php
+
+		-
+			message: "#^Call to an undefined method App\\\\Models\\\\User\\:\\:ownsTeam\\(\\)\\.$#"
+			count: 5
+			path: app/Policies/TeamPolicy.php
+
+		-
+			message: "#^Parameter \\#1 \\$value of static method Illuminate\\\\Support\\\\Str\\:\\:lower\\(\\) expects string, mixed given\\.$#"
+			count: 1
+			path: app/Providers/FortifyServiceProvider.php

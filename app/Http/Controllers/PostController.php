@@ -17,15 +17,16 @@ class PostController extends Controller
                 ->withCount('posts')
                 ->take(10)->get();
         });
+
         return view('blogs.posts.index', [
-            'categories' => $categories
+            'categories' => $categories,
         ]);
     }
 
     public function show(Post $post): View
     {
         return view('blogs.posts.show', [
-            'post' => $post
+            'post' => $post,
         ]);
     }
 }

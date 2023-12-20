@@ -27,7 +27,7 @@ class CommentPost extends Component
 
         $this->post->comments()->create([
             'user_id' => auth()->id(),
-            'content' => $this->comment
+            'content' => $this->comment,
         ]);
         $this->reset('comment');
     }

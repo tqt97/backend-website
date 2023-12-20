@@ -1,6 +1,5 @@
 <?php
 
-
 return [
     'comments' => 'Bình luận',
     'comment' => 'Bình luận',
@@ -15,7 +14,7 @@ return [
     'updated_at' => 'Ngày cập nhật',
     'deleted_at' => 'Ngày xoá',
     'published_at' => 'Ngày xuất bản',
-    "empty_state_heading" =>"Danh mục trống",
-    "empty_state_description" => "Hãy tạo danh mục, thông tin sẽ là hiện thị trong đây"
+    'empty_state_heading' => 'Danh mục trống',
+    'empty_state_description' => 'Hãy tạo danh mục, thông tin sẽ là hiện thị trong đây',
 
 ];

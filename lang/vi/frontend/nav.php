@@ -5,6 +5,5 @@ return [
     'login' => 'Đăng nhập',
     'register' => 'Đăng kí',
     'profile' => 'Hồ sơ',
-    'blog' =>'Bài viết',
-]
-;
+    'blog' => 'Bài viết',
+];

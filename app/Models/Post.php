@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -9,9 +11,6 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Str;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Casts\Attribute;
-
 
 class Post extends Model
 {
@@ -84,7 +83,7 @@ class Post extends Model
 
     public function scopeSearch(Builder $query, string $search = ''): void
     {
-        $query->where('title', 'like', '%' . $search . '%');
+        $query->where('title', 'like', '%'.$search.'%');
     }
 
     public function scopePopular(Builder $query): void
@@ -106,8 +105,8 @@ class Post extends Model
 
     /**
      * Returns an estimated reading time in a string
-     * @param string $content the content to be read
-     * @param int $wpm
+     *
+     * @param  string  $content the content to be read
      * @return string estimated read time e.g 1 minute, 30 seconds
      **/
     private function getEstimateReadingTime(string $content, int $wpm = 200): string
@@ -115,13 +114,13 @@ class Post extends Model
 
         $wordCount = str_word_count(strip_tags($content));
 
-        $minutes = (int)floor($wordCount / $wpm);
-        $seconds = (int)floor($wordCount % $wpm / ($wpm / 60));
+        $minutes = (int) floor($wordCount / $wpm);
+        $seconds = (int) floor($wordCount % $wpm / ($wpm / 60));
 
         if ($minutes === 0) {
-            return $wordCount . " words, " . $seconds . " " . Str::of('second')->plural($seconds) . " to reading";
+            return $wordCount.' words, '.$seconds.' '.Str::of('second')->plural($seconds).' to reading';
         } else {
-            return $wordCount . " words, " . $minutes . " " . Str::of('minute')->plural($minutes) . " to reading";
+            return $wordCount.' words, '.$minutes.' '.Str::of('minute')->plural($minutes).' to reading';
         }
     }
 
@@ -142,7 +141,8 @@ class Post extends Model
     public function getThumbnail(): string
     {
         $isUrl = str_contains($this->image, 'http://') || str_contains($this->image, 'https://');
+
         //        return $this->thumbnail ? asset('storage/' . $this->thumbnail) : asset('img/default.png');
-        return $isUrl ? $this->image : asset('storage/' . $this->image);
+        return $isUrl ? $this->image : asset('storage/'.$this->image);
     }
 }

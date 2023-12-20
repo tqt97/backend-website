@@ -3,7 +3,6 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\CommentResource\Pages;
-use App\Filament\Resources\CommentResource\RelationManagers;
 use App\Models\Comment;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -15,7 +14,7 @@ class CommentResource extends Resource
 {
     protected static ?string $model = Comment::class;
 
-//    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    //    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
     protected static ?string $navigationGroup = 'blogs';
 
     protected static ?string $recordTitleAttribute = 'name';
@@ -23,7 +22,6 @@ class CommentResource extends Resource
     protected static int $globalSearchResultsLimit = 5;
 
     protected static ?int $navigationSort = 5;
-
 
     public static function getNavigationGroup(): ?string
     {
@@ -64,8 +62,7 @@ class CommentResource extends Resource
                     ->required()
                     ->columnSpanFull(),
                 Forms\Components\DateTimePicker::make('published_at')
-                    ->label(__('resources/comment.published_at'))
-                ,
+                    ->label(__('resources/comment.published_at')),
                 Forms\Components\Toggle::make('approved')
                     ->label(__('resources/comment.approved'))
                     ->required(),
@@ -129,7 +126,7 @@ class CommentResource extends Resource
             ])
             ->groupingSettingsInDropdownOnDesktop()
             ->groupRecordsTriggerAction(
-                fn(Tables\Actions\Action $action) => $action
+                fn (Tables\Actions\Action $action) => $action
                     ->button()
                     ->label(__('resources/tables.group_records')),
             );

@@ -3,7 +3,6 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\PostResource\Pages;
-use App\Filament\Resources\PostResource\RelationManagers;
 use App\Models\Post;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -19,7 +18,7 @@ class PostResource extends Resource
 {
     protected static ?string $model = Post::class;
 
-//    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    //    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     protected static ?string $navigationGroup = 'blogs';
 
@@ -28,7 +27,6 @@ class PostResource extends Resource
     protected static int $globalSearchResultsLimit = 5;
 
     protected static ?int $navigationSort = 4;
-
 
     public static function getNavigationGroup(): ?string
     {
@@ -112,16 +110,14 @@ class PostResource extends Resource
                                     ->live(onBlur: false, debounce: 500)
                                     ->afterStateUpdated(function (string $operation, ?string $state, Set $set) {
                                         $set('slug', Str::slug($state));
-                                    })
-                                ,
+                                    }),
                                 Forms\Components\TextInput::make('slug')
                                     ->label(__('resources/post.categories_slug'))
                                     ->hint(__('resources/post.categories_slug_hint'))
                                     ->hintIcon('heroicon-m-information-circle')
                                     ->required()
                                     ->maxLength(255),
-                            ])
-                        ,
+                            ]),
                         Forms\Components\Select::make('tags')
                             ->label(__('resources/post.tags'))
                             ->relationship('tags', 'name')
@@ -153,8 +149,7 @@ class PostResource extends Resource
                                     ->hint(__('tags.slug_hint'))
                                     ->hintIcon('heroicon-m-information-circle')
                                     ->maxLength(255),
-                            ])
-                        ,
+                            ]),
 
                         Forms\Components\Toggle::make('featured')
                             ->label(__('resources/post.featured'))
@@ -251,7 +246,7 @@ class PostResource extends Resource
             ])
             ->groupingSettingsInDropdownOnDesktop()
             ->groupRecordsTriggerAction(
-                fn(Tables\Actions\Action $action) => $action
+                fn (Tables\Actions\Action $action) => $action
                     ->button()
                     ->label(__('resources/tables.group_records')),
             );
