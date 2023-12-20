@@ -17,7 +17,7 @@ class HomeController extends Controller
         });
 
         $latestPosts = Cache::remember('latestPosts', Carbon::now()->addDay(), function () {
-            return Post::published()->with('categories')->latest('published_at')->take(9)->get();
+            return Post::published()->with('categories')->latest('published_at')->take(6)->get();
         });
 
         return view('home', [

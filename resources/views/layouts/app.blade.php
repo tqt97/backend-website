@@ -1,5 +1,5 @@
 @props(['title'])
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
@@ -12,21 +12,21 @@
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
-    {{--    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet"/>--}}
+    {{--    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet"/> --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap" rel="stylesheet">
     <!-- Scripts -->
-    @vite(['resources/css/app.css','resources/css/custom.css', 'resources/js/app.js'])
+    @vite(['resources/css/app.css', 'resources/css/custom.css', 'resources/js/app.js'])
 
     <!-- Styles -->
     @livewireStyles
 </head>
 
-<body class="font-outfit antialiased bg-gray-800 text-white dark:bg-gray-900 dark:text-white scroll-smooth relative1">
-{{--<x-banner/>--}}
+<body class="font-outfit antialiased bg-gray-800 text-white dark:bg-gray-900 dark:text-white scroll-smooth relative">
+    {{-- <x-banner/> --}}
 
-{{-- <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
+    {{-- <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
     @livewire('navigation-menu')
 
     <!-- Page Heading -->
@@ -45,38 +45,24 @@
 </div> --}}
 
 
-@include('layouts.partials.nav')
-{{-- @include('layouts.partials.mountain') --}}
-{{-- @include('layouts.partials.header') --}}
+    @include('layouts.partials.nav')
+    {{-- @include('layouts.partials.mountain') --}}
+    {{-- @include('layouts.partials.header') --}}
 
-@yield('hero')
+    @yield('hero')
+    @include('layouts.partials.floating-sidebar')
 
-<main class="">
-    <div class="max-w-7xl flex flex-grow mx-auto md:px-2 px-4 relative">
-        {{ $slot }}
-    </div>
-</main>
+    <main class="">
+        <div class="max-w-7xl flex flex-grow mx-auto md:px-2 px-4 relative z-30">
+            {{ $slot }}
+        </div>
+    </main>
 
-@include('layouts.partials.footer')
+    @include('layouts.partials.footer')
 
-@stack('modals')
+    @stack('modals')
 
-@livewireScripts
-
-{{--<script>--}}
-{{--    const appData = () => {--}}
-{{--        return {--}}
-{{--            percent: 0,--}}
-{{--            appInit() {--}}
-{{--                window.addEventListener('scroll', () => {--}}
-{{--                    let winScroll = document.body.scrollTop || document.documentElement.scrollTop,--}}
-{{--                        height = document.documentElement.scrollHeight - document.documentElement.clientHeight;--}}
-{{--                    this.percent = Math.round((winScroll / height) * 100);--}}
-{{--                });--}}
-{{--            },--}}
-{{--        };--}}
-{{--    };--}}
-{{--</script>--}}
+    @livewireScripts
 
 </body>
 

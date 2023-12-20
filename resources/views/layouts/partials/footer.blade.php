@@ -1,4 +1,4 @@
-<div class="w-full mx-auto md:px-0 px-4 border-t border-gray-700">
+<div class="w-full mx-auto md:px-0 px-4 border-t border-gray-700 mt-16">
     <footer class="max-w-7xl mx-auto flex flex-wrap items-center justify-between px-4 py-2 text-sm">
         <div class="w-full max-w-screen-xl mx-auto py-1">
             <div class="sm:flex sm:items-center sm:justify-between">
@@ -13,20 +13,26 @@
                 </a>
                 <ul
                     class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-200 sm:mb-0 dark:text-gray-400">
-                    <li>
-                        <a href="#" class="hover:text-white me-4 md:me-6">{{ __('menu.login') }}</a>
-                    </li>
-                    <li>
-                        <a href="#" class="hover:text-white me-4 md:me-6">{{ __('menu.profile') }}</a>
-                    </li>
-                    <li>
-                        <a href="#" class="hover:text-white">{{ __('menu.blog') }}</a>
-                    </li>
+                    @auth
+                        <x-nav-custom.li-footer href="{{ route('profile') }}" :active="request()->routeIs('profile')">
+                            {{ __('frontend/header.profile') }}
+                        </x-nav-custom.li-footer>
+                    @else
+                        <x-nav-custom.li-footer href="{{ route('login') }}" :active="request()->routeIs('login')">
+                            {{ __('frontend/header.login') }}
+                        </x-nav-custom.li-footer>
+                        <x-nav-custom.li-footer href="{{ route('register') }}" :active="request()->routeIs('register')">
+                            {{ __('frontend/header.register') }}
+                        </x-nav-custom.li-footer>
+                    @endauth
+                    <x-nav-custom.li-footer href="{{ route('posts.index') }}" :active="request()->routeIs('posts.index')">
+                        {{ __('frontend/header.blog') }}
+                    </x-nav-custom.li-footer>
                 </ul>
             </div>
             <hr class="my-6 border-gray-700 sm:mx-auto dark:border-gray-700 lg:my-4" />
             <span class="block text-sm text-gray-200 sm:text-center dark:text-gray-400">© 2023
-                <a href="" class="hover:underline">TuanTQ™</a>. All Rights Reserved.
+                <a href="{{ route('home') }}" class="hover:underline">TuanTQ™</a>. All Rights Reserved.
             </span>
         </div>
         {{-- <div class="flex space-x-4"> --}}

@@ -67,6 +67,14 @@
                 </h1>
 
                 <div class="text-xl mt-10 z-20">{{ __('frontend/home.hero.desc') }}</div>
+                <div>
+                    <p class="text-3xl">
+                        Lorem ipsum dolor sit amet consectetur <a href=""
+                            class="bg-gradient-to-r from-red-500 via-blue-400 to-lime-600 bg-[length:0%_5px] bg-no-repeat bg-left-bottom hover:bg-[length:100%_5px] transition-all duration-500">
+                            adipisicing elit. Repellat rerum sint cupiditate ad, neque nulla, illo, quaerat culpa</a>
+                        quasi non dolorem aliquid consequuntur et?
+                    </p>
+                </div>
                 <div class="group">
                     <a class="px-3 py-2 mt-10 border-2 text-white bg-gray-950 text-xl rounded inline-block z-20 hover:scale-[0.95] transition duration-100
                     hover:text-gray-950 hover:bg-white"
