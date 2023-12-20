@@ -1,0 +1,397 @@
+/* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #cacaca;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #000;
+    border-radius: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #fff;
+    border-radius: 14px;
+    border: 3px solid #fff;
+}
+
+/* end scrollbar */
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+/* .logo{
+    background-color: #000000;
+} */
+
+.logo::before,
+.logo::after {
+    content: "";
+    position: absolute;
+    inset: -0.2rem;
+    z-index: -1;
+    opacity: 0.1;
+    background: linear-gradient(var(--angle),
+            #141414, #383838, rgb(15, 15, 15));
+    animation: rotate 10s linear infinite;
+}
+
+.logo::after {
+    filter: blur(10px);
+}
+
+@keyframes rotate {
+    0% {
+        --angle: 0deg;
+    }
+
+    100% {
+        --angle: 180deg;
+    }
+}
+
+.gradient {
+    /* background: linear-gradient(to left, rgb(43, 43, 43), rgb(17, 24, 39), rgb(34, 34, 34)); */
+    background: radial-gradient(at center top, rgb(255, 255, 255), rgb(0, 0, 0), rgb(15, 15, 15));
+}
+
+.gradientHover {
+    /* background: linear-gradient(to left, rgb(55, 65, 81), rgb(17, 24, 39), rgb(0, 0, 0)); */
+    background: radial-gradient(at center top, rgb(252, 252, 252), rgb(32, 32, 32), rgb(0, 0, 0));
+}
+
+
+.tags li,
+.tags a {
+    float: left;
+    height: 26px;
+    line-height: 26px;
+    position: relative;
+    font-size: 14px;
+    /*margin: 5px 0;*/
+    /*margin-right: 2px;*/
+}
+
+.tags a {
+    margin-left: 12px;
+    padding: 0 10px 0 12px;
+    /*background:#0089e0;*/
+    /*color:#fff;*/
+    text-decoration: none;
+    -moz-border-radius-bottomright: 4px;
+    -webkit-border-bottom-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    -moz-border-radius-topright: 4px;
+    -webkit-border-top-right-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.tags a:before {
+    content: "";
+    float: left;
+    position: absolute;
+    top: 0;
+    left: -12px;
+    width: 0;
+    height: 0;
+    border-color: transparent #111827 transparent transparent;
+    border-style: solid;
+    border-width: 12px 12px 14px 0;
+}
+
+.tags a:after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 0;
+    float: left;
+    width: 4px;
+    height: 4px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    background: #fff;
+    -moz-box-shadow: -1px -1px 2px #004977;
+    -webkit-box-shadow: -1px -1px 2px #004977;
+    box-shadow: -1px -1px 2px #004977;
+}
+
+.tags a:hover {
+    background: #000000;
+}
+
+.tags a:hover:before {
+    border-color: transparent #000000 transparent transparent;
+}
+
+.bg-gradient {
+    background: radial-gradient(at bottom, #BD76A8 30%, #46B0EA 100%);
+}
+
+.container-svg {
+    position: absolute;
+    background: radial-gradient(at bottom, #181818 30%, #1f2937 100%);
+    top: 0;
+}
+
+.invisible {
+    display: none;
+}
+
+.mountains {
+    position: absolute;
+    z-index: 3;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    opacity: .95;
+}
+
+.sunrise {
+    position: absolute;
+    z-index: 1;
+    bottom: 15vh;
+    left: 40%;
+    top: 70%;
+    margin-left: -100px;
+}
+@keyframes floatSun {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(50px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.sun {
+    width: 200px;
+    height: 200px;
+    background: #fffff3;
+    border-radius: 50%;
+    filter: blur(25px);
+    opacity: .75;
+    animation: floatSun 10s linear infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1, 1);
+    }
+
+    50% {
+        transform: scale(1.1, 1.1);
+    }
+
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+.sunrise {
+    animation: pulse 5s linear infinite;
+}
+
+.star {
+    position: absolute;
+    bottom: -50px;
+    left: -50px;
+    width: 300px;
+    height: 300px;
+    background: #fff;
+    opacity: .025;
+    clip-path: polygon(100% 0, 58% 50%, 100% 100%, 50% 58%, 0 100%, 48% 50%, 0 0, 50% 48%);
+}
+
+#ray {
+    transform: rotate(60deg);
+}
+
+.baloon {
+    position: absolute;
+    z-index: 2;
+    left: 20vw;
+    bottom: 35vh;
+    animation: float 10s linear infinite;
+    ;
+}
+.baloon2 {
+    position: absolute;
+    z-index: 2;
+    left: 22vw;
+    bottom: 20vh;
+    animation: float 5s linear infinite;
+    ;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-40px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.birds {
+    z-index: 4;
+    position: absolute;
+    bottom: 65vh;
+    animation: flying 16s linear infinite;
+}
+
+.birds2 {
+    z-index: 4;
+    position: absolute;
+    bottom: 50vh;
+    animation: flying 18s linear infinite;
+}
+
+.birds3 {
+    z-index: 4;
+    position: absolute;
+    bottom: 60vh;
+    animation: flying3 20s linear infinite;
+}
+
+@keyframes flying {
+    0% {
+        transform: translate(calc(95vw - 10px), 0);
+    }
+
+    50% {
+        transform: translate(50vw, -50px);
+    }
+
+    100% {
+        transform: translate(calc(2vw - 100px), -50px);
+    }
+}
+
+@keyframes flying2 {
+    0% {
+        transform: translate(calc(95vw - 10px), 0);
+    }
+
+    50% {
+        transform: translate(50vw, 100px);
+    }
+
+    100% {
+        transform: translate(calc(2vw - 100px), 0);
+    }
+}
+
+@keyframes flying3 {
+    0% {
+        transform: translate(calc(95vw - 10px), 0);
+    }
+
+    50% {
+        transform: translate(50vw, 150px);
+    }
+
+    100% {
+        transform: translate(calc(2vw - 100px), 0);
+    }
+}
+
+.wing {
+    animation: swing 2s linear infinite;
+}
+
+@keyframes swing {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1, -.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+#speech {
+    opacity: 0;
+    padding: 10px;
+    position: absolute;
+    z-index: 5;
+    right: 2.5vw;
+    bottom: 20vh;
+    transition: .5s ease-in-out;
+}
+
+
+@media screen and (max-width: 1280px) {
+    .sunrise {
+        bottom: 5vh;
+    }
+
+    .sun {
+        transform: scale(0.6, 0.6);
+    }
+
+    .star {
+        width: 150px;
+        height: 150px;
+        bottom: 30px;
+        left: 30px;
+    }
+
+    .mountains {
+        width: 150%;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .sunrise {
+        bottom: 2vh;
+    }
+
+    #baloon {
+        transform: scale(0.8, 0.8);
+    }
+
+    #birds {
+        transform: scale(0.8, 0.8);
+    }
+
+    .mountains {
+        width: 200%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .sunrise {
+        bottom: 1vh;
+    }
+
+    #baloon {
+        transform: scale(0.5, 0.5);
+    }
+
+    #birds {
+        transform: scale(0.5, 0.5);
+    }
+}

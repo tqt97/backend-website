@@ -19,11 +19,11 @@ class DatabaseSeeder extends Seeder
     {
         // $users = User::factory(10)->create();
 
-        $categories  = Category::factory(10)->create();
+        // $categories  = Category::factory(10)->create();
 
-        $tags = Tag::factory(10)->create();
+        // $tags = Tag::factory(10)->create();
 
-        $comments = Comment::factory(10)->create();
+        // $comments = Comment::factory(10)->create();
 
         $posts = Post::factory(10)->create();
 
@@ -50,10 +50,10 @@ class DatabaseSeeder extends Seeder
         //     ->has(Comment::factory(10)->recycle(Post::factory()))
         //     ->create();
 
-        User::factory()->create([
-            'name' => 'Tuantq',
-            'email' => 'admin@gmail.com',
-            'password' => bcrypt('12341234'),
-        ]);
+        // User::factory()->create([
+        //     'name' => 'Tuantq',
+        //     'email' => 'admin@gmail.com',
+        //     'password' => bcrypt('12341234'),
+        // ]);
     }
 }

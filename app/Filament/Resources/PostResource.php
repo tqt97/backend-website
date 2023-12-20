@@ -64,7 +64,11 @@ class PostResource extends Resource
                         Forms\Components\TextInput::make('title')
                             ->label(__('resources/post.title'))
                             ->required()
-                            ->maxLength(400),
+                            ->maxLength(400)
+                            ->live(onBlur: false, debounce: 500)
+                            ->afterStateUpdated(function (string $operation, ?string $state, Set $set) {
+                                $set('slug', Str::slug($state));
+                            }),
                         Forms\Components\TextInput::make('slug')
                             ->label(__('resources/post.slug'))
                             ->required()
@@ -72,7 +76,7 @@ class PostResource extends Resource
                         Forms\Components\TextInput::make('excerpt')
                             ->label(__('resources/post.excerpt'))
                             ->maxLength(255),
-                        Forms\Components\Textarea::make('content')
+                        Forms\Components\RichEditor::make('content')
                             ->label(__('resources/post.content'))
                             ->required()
                             ->columnSpanFull(),
