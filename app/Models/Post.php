@@ -140,9 +140,11 @@ class Post extends Model
 
     public function getThumbnail(): string
     {
-        $isUrl = str_contains($this->image, 'http://') || str_contains($this->image, 'https://');
+        $imageUrl = 'https://via.placeholder.com/640x480.png/';
+
+        $isUrl = str_contains($this->image, 'fake') || $this->image == '';
 
         //        return $this->thumbnail ? asset('storage/' . $this->thumbnail) : asset('img/default.png');
-        return $isUrl ? $this->image : asset('storage/'.$this->image);
+        return $isUrl ? $imageUrl.str_replace( 'fake', "",$this->image) : asset('storage/'.$this->image);
     }
 }
