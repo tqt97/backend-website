@@ -11,6 +11,12 @@ return [
     'profile' => 'Hồ sơ',
     'manage_account' => 'Quản lý tài khoản',
     'go_to_top' => 'Lên đầu trang',
-    'mode' => 'Chế độ màu sắc'
+    'mode' => 'Chế độ màu sắc',
+    'read_mode' => [
+        'dark' => "Chế độ tối",
+        "light" => "Chế độ sáng",
+        "system" => "Chế độ hệ thống",
+    ],
+    
 
 ];
