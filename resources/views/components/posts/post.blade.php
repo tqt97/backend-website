@@ -2,8 +2,8 @@
 
 <article
     {{ $attributes->merge(['class' => 'rounded-xl shadow-lg hover:shadow-md mb-10 bg-white transiton-all duration-200 group']) }}>
-    <div class="article-body grid grid-cols-12 gap-3 items-start radius-xl">
-        <div class="article-thumbnail col-span-4 flex items-center">
+    <div class="article-body grid md:grid-cols-12 grid-cols-1á gap-3 items-start radius-xl">
+        <div class="article-thumbnail md:col-span-4 col-span-1 flex items-center">
             <a wire:navigate href="{{ route('posts.show', $post->slug) }}">
                 <img class="mw-100 mx-auto rounded-l-xl" src="{{ $post->getThumbnail() }}" alt="{{ $post->title }}">
             </a>

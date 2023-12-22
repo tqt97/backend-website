@@ -14,7 +14,8 @@
                 <ul
                     class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-200 sm:mb-0 dark:text-gray-400">
                     @auth
-                        <x-nav-custom.li-footer href="{{ route('profile') }}" :active="request()->routeIs('profile')">
+                        <x-nav-custom.li-footer href="{{ route('profile.show') }}" :active="request()->routeIs
+                        ('profile')">
                             {{ __('frontend/header.profile') }}
                         </x-nav-custom.li-footer>
                     @else

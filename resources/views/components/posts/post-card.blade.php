@@ -1,6 +1,10 @@
 @props(['post'])
 
-<div {{ $attributes }}>
+@php
+    $classes = "md:col-span-1 col-span-3 shadow-lg rounded-xl bg-white transition ease-linear duration-300 group border border-gray-700  hover:border-gray-200";
+@endphp
+
+<div {{ $attributes->merge(['class' => $classes]) }}>
     <a wire:navigate href="{{ route('posts.show', $post->slug) }}">
         <div>
             <img class="w-full rounded-t-xl" src="{{ $post->getThumbnail() }}" alt="{{ $post->title }}">

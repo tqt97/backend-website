@@ -10,18 +10,18 @@
     open: false,
     atTop: true
 }" --}}
-<nav class="border-b border-gray-700 top-0 z-50 w-full md:shadow-md py-1 relative z-12" x-data="{
-    percent: 0,
-    appInit() {
-        window.addEventListener('scroll', () => {
-            let winScroll = document.body.scrollTop || document.documentElement.scrollTop,
-                height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            this.percent = Math.round((winScroll / height) * 100);
-        });
-    },
-    open: false,
-}"
-    x-init="appInit()" {{-- @scroll.window="atTop = (window.pageYOffset > window.innerHeight) ? false : true"
+<nav class="bg-gray-900 border-b border-gray-800 top-0 z-50 w-full md:shadow-md py-1 relative z-12"
+    x-data="{
+        percent: 0,
+        appInit() {
+            window.addEventListener('scroll', () => {
+                let winScroll = document.body.scrollTop || document.documentElement.scrollTop,
+                    height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                this.percent = Math.round((winScroll / height) * 100);
+            });
+        },
+        open: false,
+    }" x-init="appInit()" {{-- @scroll.window="atTop = (window.pageYOffset > window.innerHeight) ? false : true"
     :class="(atTop === true) ? 'py-2 relative' : 'fixed top-0 bg-gray-800 md:shadow-md'" --}}>
 
     <!-- Page Scroll Progress -->
@@ -33,13 +33,19 @@
     <div class="max-w-7xl mx-auto md:px-2 px-4">
         <div class="flex justify-between">
             <div class="flex space-x-7">
-                <div class="group">
+                <div class="group p-2">
                     <!-- Website Logo -->
-                    <a href="{{ route('home') }}" title="{{ __('frontend/header.home') }}"
+                    {{-- <a href="{{ route('home') }}" title="{{ __('frontend/header.home') }}"
                         class="flex items-center p-2 shadow-lg transition duration-150  relative
                         rounded-md">
                         <span
                             class="relative rounded border-2 shadow-sm border-white gradient1 font-semibold bg-gray-950 text-white text-xl py-1 px-1 transition-all">
+                            T.Q.T
+                        </span>
+                    </a> --}}
+                    <a href="{{ route('home') }}"
+                        class="flex items-center rounded p-0 ml-1 transform gradient-border bg-gradient-to-r from-red-500 via-blue-400 to-lime-600 bg-no-repeat bg-left-bottom bg-[length:100%_3px] transition-all duration-500">
+                        <span class="font-bold bg-gray-900 p-2 rounded">
                             T.Q.T
                         </span>
                     </a>
@@ -56,6 +62,7 @@
             </div>
             <!-- Secondary Navbar items -->
             <div class="hidden md:flex items-center space-x-3">
+                @include('layouts.partials.dark-mode')
                 @auth
                     @include('layouts.partials.header-right-auth')
                 @else
