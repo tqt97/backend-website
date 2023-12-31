@@ -4,7 +4,7 @@
             {{ __('frontend/header.admin') }}
         </x-nav-link>
     @endcan
-    <x-dropdown align="right" width="36">
+    <x-dropdown align="right" width="48">
         <x-slot name="trigger">
             @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
                 <button

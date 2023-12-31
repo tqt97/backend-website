@@ -1,27 +1,29 @@
 <x-app-layout :title="$post->title">
-    <article class="col-span-4 md:col-span-3 mt-5 mx-auto py-5 w-full max-w-7xl rounded-2xl p-2">
-        <div class="relative z-0">
-            {{-- <div class="absolute left-0 bottom-0 w-full h-full z-10"
-                style="background-image: linear-gradient(180deg,transparent,rgba(0, 0, 0, 0.0.2));">
-            </div> --}}
-            <img class="w-full md:h-[60vh] h-[40vh] object-cover my-2 rounded-xl shadow-md border border-gray-700 " src="{{ $post->getThumbnail() }}"
+    <article class="col-span-4 md:col-span-3 mx-auto rounded-md px-2">
+        {{-- <div class="relative z-0">
+            <img class="w-full md:h-[60vh] h-[40vh] object-cover my-2 rounded-xl shadow-md" src="{{ $post->getThumbnail() }}"
                 alt="{{ $post->title }}">
-        </div>
+        </div> --}}
 
-        <div class="w-[90%] md:w-[95%] mx-auto  bg-white rounded-2xl px-4 py-2 -mt-48 z-2 relative">
+        <div class="md:max-w-7xl mx-auto bg-white shadow-sm border rounded-md px-8 py-4">
             <h1 class="md:text-4xl text-2xl font-bold text-left text-gray-800 ">
                 {{ $post->title }}
             </h1>
 
             <div class="mt-2 flex justify-between items-center">
-                <div class="flex py-5 text-base items-center text-gray-800">
-                    <x-posts.author :author="$post->user" size="md" />
-                    <span class="text-gray-700 text-md">| {{ $post->time_to_read }}</span>
-                </div>
+                {{-- <div class="flex py-5 text-base items-center text-gray-800"> --}}
+                <x-posts.author :author="$post->user" size="sm" />
+                {{-- <span class="text-gray-700 text-md">| {{ $post->time_to_read }}</span> --}}
+                {{-- </div> --}}
+            </div>
+            <div class="my-4 flex justify-between items-center">
                 <div class="flex items-center">
+                    <x-icons.calendar />
+                    <span class="text-gray-500">{{ $post->created_at->format('d-m-Y') }}</span>
+                </div>
+                <div class="flex text-base items-center text-gray-800">
                     <x-icons.clock />
-
-                    <span class="text-gray-500 ml-2">{{ $post->publishedDiffForHumans() }}</span>
+                    <span class="text-gray-700 text-md"> {{ $post->time_to_read }}</span>
                 </div>
             </div>
 
@@ -37,6 +39,9 @@
                     </div>
                 </div>
                 <div class="flex items-center">
+                    <div>
+                        <x-icons.bookmark class="mr-2" />
+                    </div>
                     <livewire:blog.like-button :key="'show-likeButton-' . $post->id" :$post />
                 </div>
             </div>

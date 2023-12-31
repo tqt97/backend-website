@@ -7,7 +7,7 @@
 
     $classes = $active ?? false
     ? 'flex ' . $size . ' flex-col items-center justify-center gap-1 text-gray-950 bg-white rounded-lg'
-    : 'flex ' . $size . ' flex-col items-center justify-center gap-1 text-white hover:bg-white hover:text-gray-950 rounded-lg';
+    : 'flex ' . $size . ' flex-col items-center justify-center gap-1 hover:bg-gray-900 hover:text-white rounded-lg';
 @endphp
 
 <a wire:navigate {{ $attributes->merge(['class' => $classes]) }} >
