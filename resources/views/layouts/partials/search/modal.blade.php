@@ -28,7 +28,7 @@
 
             <!--Search livewire-->
             <div>
-                <livewire:searchlive />
+                <livewire:search-live />
             </div>
 
             <!---->
