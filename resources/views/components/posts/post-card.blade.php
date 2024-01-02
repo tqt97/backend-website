@@ -7,7 +7,8 @@
 <div {{ $attributes->merge(['class' => $classes]) }}>
     <a wire:navigate class="rounded-md" href="{{ route('posts.show', $post->slug) }}" title="{{ $post->title }}">
         <figure class="w-full">
-            <img class="w-full rounded-t-md" src="{{ $post->getThumbnail() }}" alt="{{ $post->title }}">
+            <img class="w-full rounded-t-md" src="{{ $post->getThumbnail() }}" alt="{{ $post->title }}" width="640"
+                height="480">
         </figure>
     </a>
     <div class="mt-3 p-2">

@@ -148,11 +148,18 @@ class Post extends Model
 
     public function getThumbnail(): string
     {
-        $imageUrl = 'https://via.placeholder.com/640x480.png/';
+        // $imageUrl = 'https://via.placeholder.com/640x480.png/';
 
-        $isUrl = str_contains($this->image, 'fake') || $this->image == '';
+        // $isUrl = str_contains($this->image, 'fake') || $this->image == '';
+
+        if($this->image == '' || str_contains($this->image, 'fake')){
+            $imageUrl = asset('images/no-image-640-480.webp');
+        }else{
+            $imageUrl = asset('storage/'.$this->image);
+        }
 
         //        return $this->thumbnail ? asset('storage/' . $this->thumbnail) : asset('img/default.png');
-        return $isUrl ? $imageUrl.str_replace( 'fake', "",$this->image) : asset('storage/'.$this->image);
+        // return $isUrl ? $imageUrl.str_replace( 'fake', "",$this->image) : asset('storage/'.$this->image);
+        return $imageUrl;
     }
 }

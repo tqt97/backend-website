@@ -6,7 +6,8 @@
         <div class="article-thumbnail md:col-span-4 col-span-1 flex items-center">
             <a wire:navigate href="{{ route('posts.show', $post->slug) }}">
                 <img class="x-full mx-auto md:rounded-l-md rounded-t-md md:rounded-r-none"
-                    src="{{ $post->getThumbnail() }}" alt="{{ $post->title }}">
+                    src="{{ $post->getThumbnail() }}" alt="{{ $post->title }}" width="640"
+                    height="480">
             </a>
         </div>
         <div class="col-span-8 px-4">

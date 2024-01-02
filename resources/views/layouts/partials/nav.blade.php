@@ -122,7 +122,7 @@
             <!-- Mobile menu button -->
             <div class="md:hidden flex items-center space-x-4 px-2">
                 <div class="">
-                    <button x-on:click="modalOpen =!modalOpen" x-mousetrap.global.command-k.ctrl-k
+                    <button id="toggleSearchBoxMobile" x-on:click="modalOpen =!modalOpen" x-mousetrap.global.command-k.ctrl-k
                         class="flex items-center justify-center px-3 py-2 space-x-2 text-sm tracking-wide text-white capitalize transition-colors duration-200 transform focus:outline-none focus:ring-none">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" aria-hidden="true" class="w-5 h-5 text-gray-400">
@@ -132,8 +132,8 @@
                         </svg>
                     </button>
                 </div>
-                @include('layouts.partials.theme.switch')
-                <button x-on:click="isOpenMenuMobile = !isOpenMenuMobile"
+                @include('layouts.partials.theme.switch-mobile')
+                <button id="toggleMobileMenu" x-on:click="isOpenMenuMobile = !isOpenMenuMobile"
                     class="flex items-center space-x-2 focus:outline-none">
                     <div class="w-6 flex items-center justify-center relative">
                         <span x-bind:class="isOpenMenuMobile ? 'translate-y-0 rotate-45' : '-translate-y-2'"
