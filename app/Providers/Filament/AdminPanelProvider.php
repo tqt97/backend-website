@@ -21,6 +21,7 @@ use Swis\Filament\Backgrounds\FilamentBackgroundsPlugin;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
+use Amendozaaguiar\FilamentRouteStatistics\FilamentRouteStatisticsPlugin;
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -94,6 +95,7 @@ class AdminPanelProvider extends PanelProvider
                         'sm' => 2,
                     ]),
                 FilamentBackgroundsPlugin::make(),
+                FilamentRouteStatisticsPlugin::make(),
             ]);
     }
 }
