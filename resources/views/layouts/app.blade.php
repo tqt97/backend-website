@@ -11,12 +11,26 @@
     class="scroll-smooth focus:scroll-auto">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
     <title>{{ isset($title) ? $title . ' | ' : '' }} {{ config('app.name', 'Laravel') }}</title>
 
+    <meta name="keywords" content="@yield('meta_keywords', 'php language, laravel framework, livewire, alpinejs, vuejs, vite, tailwindcss, javascript, backend, frontend')">
+    <meta name="description" content="@yield('meta_description', 'Share knowledge about web development, design, php language, laravel framework and more.')">
+    <meta name=”robots” content="index, follow">
+    
+    <meta property="og:title" content="{{ isset($title) ? $title . ' | ' : '' }} {{ config('app.name', 'Laravel') }}"/>
+    <meta property="og:image" content="https://www.example.com/image.jpg"/>
+    <meta property="og:description" content="Share knowledge about web development, design, php language, laravel framework and more."/>
+    <meta property="twitter:card" content="summary_large_image"/>
+    <meta property="twitter:title" content="{{ isset($title) ? $title . ' | ' : '' }} {{ config('app.name', 'Laravel') }}"/>
+    <meta property="twitter:image" content="https://www.example.com/image.jpg"/>
+    <meta property="twitter:description" content="Share knowledge about web development, design, php language, laravel framework and more."/>
+
+    {{-- <meta http-equiv="refresh" content="5; url="https://tuanit.io.vn/"> --}}
+
+    <link rel="canonical" href="{{ url()->current() }}" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -26,7 +40,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap" rel="stylesheet">
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/css/custom.css', 'resources/js/app.js'])
-    {{-- <script src="https://cdn.jsdelivr.net/npm/@danharrin/alpine-mousetrap@0.x.x/dist/alpine-mousetrap.js" defer></script> --}}
+    {{-- Google analytics --}}
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CMF5S21FVT"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
