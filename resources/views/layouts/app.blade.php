@@ -27,7 +27,17 @@
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/css/custom.css', 'resources/js/app.js'])
     {{-- <script src="https://cdn.jsdelivr.net/npm/@danharrin/alpine-mousetrap@0.x.x/dist/alpine-mousetrap.js" defer></script> --}}
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CMF5S21FVT"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-CMF5S21FVT');
+    </script>
     <!-- Styles -->
     @livewireStyles
 </head>
@@ -109,8 +119,8 @@
     <div x-data="{ scrollBackTop: false }" x-cloak>
         <button x-show="scrollBackTop"
             x-on:scroll.window="scrollBackTop = (window.pageYOffset > window.outerHeight * 0.5) ? true : false"
-            @click.prevent="window.scrollTo({top: 0, behavior: 'smooth'})"
-            x-on:click="$scroll('#top')" aria-label="Back to top"
+            @click.prevent="window.scrollTo({top: 0, behavior: 'smooth'})" x-on:click="$scroll('#top')"
+            aria-label="Back to top"
             class="fixed bottom-0 right-0 py-2 px-1.5 rounded-md mx-3 my-3 md:my-10 text-white bg-gray-900 dark:bg-gray-800 hover:cursor-pointer focus:outline-none">
             <x-icons.arrow-up />
         </button>
