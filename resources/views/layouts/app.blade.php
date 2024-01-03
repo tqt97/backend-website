@@ -19,9 +19,33 @@
     <meta name="keywords" content="@yield('meta_keywords', 'php language, laravel framework, livewire, alpinejs, vuejs, vite, tailwindcss, javascript, backend, frontend')">
     <meta name="description" content="@yield('meta_description', 'Share knowledge about web development, design, php language, laravel framework and more.')">
     <meta name=”robots” content="index, follow">
+
+    {{-- <meta property='article:published_time' content='2015-01-31T20:30:11-02:00'>
+    <meta property='article:section' content='news'> --}}
+
+      <!-- Set locale for Vietnam -->
+    <meta http-equiv="Content-Language" content="vi-VN">
+    
+    {{-- <meta property="og:description" content="description..."> --}}
+    <meta property="og:url" content="http://current.url.com">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="vi-VN">
+    <meta property="og:locale:alternate" content="vi-VN">
+    <meta property="og:locale:alternate" content="en-us">
+    <meta property="og:site_name" content="name">
+    <meta property="og:image" content="http://image.url.com/cover.jpg">
+    <meta property="og:image" content="http://image.url.com/img1.jpg">
+    <meta property="og:image" content="http://image.url.com/img2.jpg">
+    <meta property="og:image" content="http://image.url.com/img3.jpg">
+    <meta property="og:image:url" content="http://image.url.com/cover.jpg">
+    <meta property="og:image:size" content="300">
+
+    <meta name="twitter:card"content="summary">
+    <meta name="twitter:title"content="Title">
+    <meta name="twitter:site"content="@LuizVinicius73">
     
     <meta property="og:title" content="{{ isset($title) ? $title . ' | ' : '' }} {{ config('app.name', 'Laravel') }}"/>
-    <meta property="og:image" content="https://www.example.com/image.jpg"/>
+    {{-- <meta property="og:image" content="https://www.example.com/image.jpg"/> --}}
     <meta property="og:description" content="Share knowledge about web development, design, php language, laravel framework and more."/>
     <meta property="twitter:card" content="summary_large_image"/>
     <meta property="twitter:title" content="{{ isset($title) ? $title . ' | ' : '' }} {{ config('app.name', 'Laravel') }}"/>
