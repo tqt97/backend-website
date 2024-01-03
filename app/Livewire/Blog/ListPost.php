@@ -31,6 +31,14 @@ class ListPost extends Component
         $this->sort = ($sort === 'desc') ? 'desc' : 'asc';
     }
 
+    public function toggleSort(){
+        $this->sort = ($this->sort === 'desc') ? 'asc' : 'desc';
+    }
+
+    public function togglePopular(){
+        $this->popular = !$this->popular;
+    }
+
     #[On('search')]
     public function updateSearch($search): void
     {

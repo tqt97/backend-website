@@ -1,10 +1,15 @@
 @props(['post'])
 
-<div {{ $attributes }}>
-    <a wire:navigate href="{{ route('posts.show', $post->slug) }}">
-        <div>
-            <img class="w-full rounded-t-xl" src="{{ $post->getThumbnail() }}" alt="{{ $post->title }}">
-        </div>
+@php
+    $classes = 'post-card group';
+@endphp
+
+<div {{ $attributes->merge(['class' => $classes]) }}>
+    <a wire:navigate class="rounded-md" href="{{ route('posts.show', $post->slug) }}" title="{{ $post->title }}">
+        <figure class="w-full">
+            <img class="w-full rounded-t-md" src="{{ $post->getThumbnail() }}" alt="{{ $post->title }}" width="640"
+                height="480">
+        </figure>
     </a>
     <div class="mt-3 p-2">
         <div>
@@ -17,7 +22,8 @@
             </div>
             <div class="flex flex-wrap items-center justify-between gap-x-8 gap-y-3">
                 <p class="text-gray-800 text-sm flex items-center">
-                    <x-icons.calendar /> {{ $post->created_at->format('M d, Y') }}
+                    <x-icons.calendar />
+                    <time>{{ $post->created_at->format('d-m-Y') }}</time>
                 </p>
                 <p class="text-gray-800 text-sm flex items-center">
                     <x-icons.clock /> {{ $post->time_to_read }}
@@ -26,8 +32,7 @@
         </div>
         <div class="mt-3">
             <a href="{{ route('posts.show', $post->slug) }}" title="{{ $post->title }}"
-                class="text-xl font-semibold text-gray-950 relative cursor-pointer pb-1
-                bg-gradient-to-r from-green-900 via-blue-400 to-pink-800 bg-[length:0%_2px] bg-no-repeat bg-left-bottom group-hover:bg-[length:100%_2px] transition-all duration-500">
+                class="text-xl underline-title font-semibold text-gray-950 relative cursor-pointer pb-1">
                 {{ $post->title }}
             </a>
         </div>

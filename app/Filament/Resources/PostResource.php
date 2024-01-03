@@ -2,17 +2,19 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\PostResource\Pages;
-use App\Models\Post;
 use Filament\Forms;
-use Filament\Forms\Form;
-use Filament\Forms\Set;
-use Filament\Resources\Resource;
+use App\Models\Post;
 use Filament\Tables;
+use Filament\Forms\Set;
+use Filament\Forms\Form;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Support\Str;
+use Filament\Resources\Resource;
+use Illuminate\Database\Eloquent\Builder;
+use App\Filament\Resources\PostResource\Pages;
+use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
+use Joshembling\ImageOptimizer\Components\SpatieMediaLibraryFileUpload;
 
 class PostResource extends Resource
 {
@@ -88,7 +90,29 @@ class PostResource extends Resource
                     ->compact()
                     ->schema([
                         Forms\Components\FileUpload::make('image')
-                            ->image(),
+                            // ->getUploadedFileNameForStorageUsing(
+                            //     fn (TemporaryUploadedFile $file): string => (string) str($file->getClientOriginalName())
+                            //         ->prepend('posts-'),
+                            // )
+                            ->directory('posts')
+                            ->image()
+                            ->optimize('webp')
+                            ->imageEditor()
+                            ->imageResizeMode('cover')
+                            ->imageCropAspectRatio('16:9')
+                            ->imageResizeTargetWidth('640')
+                            ->imageResizeTargetHeight('480')
+                            ->openable()
+                            ->downloadable()
+                            ->imageEditorAspectRatios([
+                                null,
+                                '16:9',
+                                '4:3',
+                                '1:1',
+                            ])
+                            ->maxSize(2048),
+
+
                         Forms\Components\Select::make('categories')
                             ->label(__('resources/post.categories'))
                             ->relationship('categories', 'name')

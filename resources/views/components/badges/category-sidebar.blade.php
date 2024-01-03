@@ -36,7 +36,5 @@
 {{--</button>--}}
 
 <li class="{{ $marginBottom ?? false ? 'mb-2' : ''}}">
-    <a {{ $attributes }} class="bg-gray-900 text-slate-50 hover:bg-gray-950 hover:text-white
-    hover:rotate-[1.5deg]
-    hover:scale-[1.05] transition-colors duration-200 text-sm mr-2 mb-2">{{ $slot }}</a>
+    <a {{ $attributes }} class="bg-gray-900 text-white text-xs mr-2 mb-2">{{ $slot }}</a>
 </li>

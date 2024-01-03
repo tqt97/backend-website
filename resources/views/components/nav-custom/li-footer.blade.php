@@ -1,6 +1,9 @@
-@props(['active'])
+@props(['active','last'])
 @php
-    $classes = $active ?? false ? 'me-4 md:me-6 text-white' : 'me-4 md:me-6 text-gray-400';
+    $last = $last ?? false ? '' : 'me-4 md:me-6';
+    $active = $active ?? false ? 'underline' : '';
+
+    $classes = $last . ' '. $active;
 @endphp
 
 <li>

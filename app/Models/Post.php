@@ -2,20 +2,22 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Casts\Attribute;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Str;
+// use Laravel\Scout\Searchable;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Casts\Attribute;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Post extends Model
 {
     use HasFactory;
     use softDeletes;
+    // use Searchable;
 
     /**
      * The attributes that are mass assignable.
@@ -109,7 +111,7 @@ class Post extends Model
      * @param  string  $content the content to be read
      * @return string estimated read time e.g 1 minute, 30 seconds
      **/
-    private function getEstimateReadingTime(string $content, int $wpm = 200): string
+    private function getEstimateReadingTime(string $content, int $wpm = 50): string
     {
 
         $wordCount = str_word_count(strip_tags($content));
@@ -117,10 +119,16 @@ class Post extends Model
         $minutes = (int) floor($wordCount / $wpm);
         $seconds = (int) floor($wordCount % $wpm / ($wpm / 60));
 
-        if ($minutes === 0) {
-            return $wordCount.' words, '.$seconds.' '.Str::of('second')->plural($seconds).' to reading';
+        $plural_of_second = Str::of('second')->plural($seconds);
+        $plural_of_minute = Str::of('minute')->plural($minutes);
+
+        if ($minutes <= 1) {
+            // return $wordCount.' words, '.$seconds.' '.$plural_of_second;
+
+            return __('frontend/layout.about_minutes');
         } else {
-            return $wordCount.' words, '.$minutes.' '.Str::of('minute')->plural($minutes).' to reading';
+            // return $wordCount.' words, '.$minutes.' '.$plural_of_minute.' '.$seconds.' '.$plural_of_second;
+            return __('frontend/layout.reading_time', ['minutes' => $minutes, 'seconds' => $seconds]);
         }
     }
 
@@ -140,9 +148,18 @@ class Post extends Model
 
     public function getThumbnail(): string
     {
-        $isUrl = str_contains($this->image, 'http://') || str_contains($this->image, 'https://');
+        // $imageUrl = 'https://via.placeholder.com/640x480.png/';
+
+        // $isUrl = str_contains($this->image, 'fake') || $this->image == '';
+
+        if($this->image == '' || str_contains($this->image, 'fake')){
+            $imageUrl = asset('images/no-image-640-480.webp');
+        }else{
+            $imageUrl = asset('storage/'.$this->image);
+        }
 
         //        return $this->thumbnail ? asset('storage/' . $this->thumbnail) : asset('img/default.png');
-        return $isUrl ? $this->image : asset('storage/'.$this->image);
+        // return $isUrl ? $imageUrl.str_replace( 'fake', "",$this->image) : asset('storage/'.$this->image);
+        return $imageUrl;
     }
 }

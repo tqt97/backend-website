@@ -5,3 +5,26 @@
 [x-cloak] {
     display: none;
 }
+
+.theme-style{
+    @apply text-base bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100;
+}
+
+.post-card {
+    @apply md:col-span-1 col-span-3 bg-white rounded-md shadow-lg hover:shadow-md transition-all duration-300;
+}
+
+.post-article {
+    @apply p-6 md:px-8 md:py-6;
+}
+
+.shadow-border {
+    box-shadow: 0 10px 10px -10px #030712;
+}
+.shadow-border:hover {
+    box-shadow: 0 5px 5px -5px #030712;
+}
+
+.underline-title {
+    @apply bg-gradient-to-r from-green-900 via-blue-900 to-pink-900 bg-[length:0%_1px] bg-no-repeat bg-left-bottom group-hover:bg-[length:100%_1px];
+}

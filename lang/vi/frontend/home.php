@@ -7,7 +7,7 @@ return [
     'hero' => [
         'title' => 'Chào mừng đến với',
         'cta' => 'Xem thêm bài viết',
-        'desc' => 'Chia sẻ kiến thức',
+        'desc' => 'Share something',
     ],
     'featured_posts' => 'Bài viết nổi bật',
     'latest_posts' => 'Bài viết mới nhất',
