@@ -4,8 +4,8 @@
     @endsection
 
     <div class="mb-10">
-        <section id="feature" class="py-5">
-            <x-pages.home.heading-div title="{{ __('frontend/home/index.featured') }}"/>
+        <section id="feature" class="pb-10">
+            <x-pages.home.heading-div title="{{ __('frontend/home/index.featured') }}" />
 
             <x-pages.home.blog-div>
                 @foreach ($featurePosts as $post)
@@ -14,8 +14,8 @@
             </x-pages.home.blog-div>
         </section>
 
-        <section id="latest" class="py-5">
-            <x-pages.home.heading-div title="{{ __('frontend/home/index.latest') }}"/>
+        <section id="latest" class="py-10">
+            <x-pages.home.heading-div title="{{ __('frontend/home/index.latest') }}" />
 
             <x-pages.home.blog-div>
                 @foreach ($latestPosts as $post)

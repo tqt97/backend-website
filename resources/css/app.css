@@ -6,12 +6,12 @@
     display: none;
 }
 
-.theme-style{
-    @apply text-base bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100;
+.theme-style {
+    @apply text-base bg-white text-gray-950 dark:bg-gray-900 dark:text-white;
 }
 
 .post-card {
-    @apply md:col-span-1 col-span-3 bg-white rounded-md shadow-lg hover:shadow-md transition-all duration-300;
+    @apply relative md:col-span-1 col-span-3 bg-white border border-gray-200 rounded-md shadow-md hover:shadow-2xl transition-all duration-300;
 }
 
 .post-article {
@@ -21,6 +21,7 @@
 .shadow-border {
     box-shadow: 0 10px 10px -10px #030712;
 }
+
 .shadow-border:hover {
     box-shadow: 0 5px 5px -5px #030712;
 }

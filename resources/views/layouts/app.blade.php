@@ -23,9 +23,9 @@
     {{-- <meta property='article:published_time' content='2015-01-31T20:30:11-02:00'>
     <meta property='article:section' content='news'> --}}
 
-      <!-- Set locale for Vietnam -->
+    <!-- Set locale for Vietnam -->
     <meta http-equiv="Content-Language" content="vi-VN">
-    
+
     {{-- <meta property="og:description" content="description..."> --}}
     <meta property="og:url" content="http://current.url.com">
     <meta property="og:type" content="article">
@@ -43,14 +43,17 @@
     <meta name="twitter:card"content="summary">
     <meta name="twitter:title"content="Title">
     <meta name="twitter:site"content="@LuizVinicius73">
-    
-    <meta property="og:title" content="{{ isset($title) ? $title . ' | ' : '' }} {{ config('app.name', 'Laravel') }}"/>
+
+    <meta property="og:title" content="{{ isset($title) ? $title . ' | ' : '' }} {{ config('app.name', 'Laravel') }}" />
     {{-- <meta property="og:image" content="https://www.example.com/image.jpg"/> --}}
-    <meta property="og:description" content="Share knowledge about web development, design, php language, laravel framework and more."/>
-    <meta property="twitter:card" content="summary_large_image"/>
-    <meta property="twitter:title" content="{{ isset($title) ? $title . ' | ' : '' }} {{ config('app.name', 'Laravel') }}"/>
-    <meta property="twitter:image" content="https://www.example.com/image.jpg"/>
-    <meta property="twitter:description" content="Share knowledge about web development, design, php language, laravel framework and more."/>
+    <meta property="og:description"
+        content="Share knowledge about web development, design, php language, laravel framework and more." />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title"
+        content="{{ isset($title) ? $title . ' | ' : '' }} {{ config('app.name', 'Laravel') }}" />
+    <meta property="twitter:image" content="https://www.example.com/image.jpg" />
+    <meta property="twitter:description"
+        content="Share knowledge about web development, design, php language, laravel framework and more." />
 
     {{-- <meta http-equiv="refresh" content="5; url="https://tuanit.io.vn/"> --}}
 
@@ -148,7 +151,7 @@
     @include('layouts.partials.search.modal')
 
     <main class="my-12">
-        <div class="max-w-7xl mx-auto flex flex-grow mx-auto md:px-2 px-4 relative">
+        <div class="max-w-7xl mx-auto flex flex-grow md:px-2 px-4 relative">
             {{ $slot }}
         </div>
     </main>
@@ -159,7 +162,7 @@
             x-on:scroll.window="scrollBackTop = (window.pageYOffset > window.outerHeight * 0.5) ? true : false"
             @click.prevent="window.scrollTo({top: 0, behavior: 'smooth'})" x-on:click="$scroll('#top')"
             aria-label="Back to top"
-            class="fixed bottom-0 right-0 py-2 px-1.5 rounded-md mx-3 my-3 md:my-10 text-white bg-gray-900 dark:bg-gray-800 hover:cursor-pointer focus:outline-none">
+            class="fixed bottom-4 md:bottom-8 right-0 py-2 px-2 rounded-md mx-3 my-3 md:my-10 text-white bg-gray-900 dark:bg-gray-800 hover:cursor-pointer focus:outline-none">
             <x-icons.arrow-up />
         </button>
     </div>

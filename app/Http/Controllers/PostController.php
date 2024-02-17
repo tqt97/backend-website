@@ -12,11 +12,15 @@ class PostController extends Controller
 {
     public function index(): View
     {
-        $categories = Cache::remember('categories_posts', Carbon::now()->addDay(), function () {
-            return Category::whereHas('posts', fn ($q) => $q->published())
-                ->withCount('posts')
-                ->take(10)->get();
-        });
+        // $categories = Cache::remember('categories_posts', Carbon::now()->addDay(), function () {
+        //     return Category::whereHas('posts', fn ($q) => $q->published())
+        //         ->withCount('posts')
+        //         ->take(10)->get();
+        // });
+
+        $categories = Category::whereHas('posts', fn ($q) => $q->published())
+        ->withCount('posts')
+        ->take(10)->get();
 
         return view('blogs.posts.index', [
             'categories' => $categories,

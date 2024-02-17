@@ -22,7 +22,7 @@ return [
         'profile' => 'Hồ sơ',
         'blog' => 'Bài viết',
     ],
-    'search' => 'Tìm kiếm',
+    'search' => 'Tìm kiếm bài viết',
     'reading_time' => ':minutes phút :seconds giây',
     'about_minutes' => 'khoảng một phút',
     'search_here' => 'Nhập từ khoá để tìm kiếm',
@@ -30,5 +30,6 @@ return [
     'search_for_result' => 'Tìm kiếm cho từ khoá :key co :number kết quả',
     'search_for' => 'Tìm kiếm cho từ khoá',
     'has' => 'có',
-    'results' => 'kết quả', 
+    'results' => 'kết quả',
+    'search_title' => "Tìm kiếm bài viết",
 ];
