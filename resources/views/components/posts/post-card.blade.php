@@ -7,9 +7,9 @@
 <div {{ $attributes->merge(['class' => $classes]) }}>
     <a wire:navigate class="rounded-md" href="{{ route('posts.show', $post->slug) }}" title="{{ $post->title }}">
         <div class="p-3">
-            <figure class="">
-                <img class="w-full rounded-xl group-hover:scale-[1.0] transition-all" src="{{ $post->getThumbnail() }}"
-                    alt="{{ $post->title }}">
+            <figure class="overflow-hidden rounded-xl">
+                <img class="w-ful1l rounded-xl object-cover group-hover:scale-110 transition-all"
+                    src="{{ $post->getThumbnail() }}" alt="{{ $post->title }}">
             </figure>
         </div>
         <div class="p-3">

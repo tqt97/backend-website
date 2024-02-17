@@ -5,7 +5,7 @@
         </div>
         <div
             class="md:block hidden col-span-4 md:col-span-1 px-3
-            md:border-l-2 border-gray-100 dark:border-gray-200 rounded-r h-screen sticky top-0 bg-white">
+            md:border-l border-gray-200 dark:border-gray-200 rounded-r h-screen sticky top-0 bg-white">
             @include('blogs.posts.partials.categories')
         </div>
     </div>

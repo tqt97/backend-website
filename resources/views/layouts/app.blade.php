@@ -160,7 +160,7 @@
     <div x-data="{ scrollBackTop: false }" x-cloak>
         <button x-show="scrollBackTop"
             x-on:scroll.window="scrollBackTop = (window.pageYOffset > window.outerHeight * 0.5) ? true : false"
-            @click.prevent="window.scrollTo({top: 0, behavior: 'smooth'})" x-on:click="$scroll('#top')"
+            @click.prevent="window.scrollTo({top: 0, behavior: 'smooth'})"
             aria-label="Back to top"
             class="fixed bottom-4 md:bottom-8 right-0 py-2 px-2 rounded-md mx-3 my-3 md:my-10 text-white bg-gray-900 dark:bg-gray-800 hover:cursor-pointer focus:outline-none">
             <x-icons.arrow-up />

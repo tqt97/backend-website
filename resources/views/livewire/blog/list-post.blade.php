@@ -13,7 +13,7 @@
                 </a>
             @endif
             @if ($search)
-                <span class="ml-2">
+                <span class="ml-2 text-gray-900">
                     {{ __('blog.containing') }} : <strong>{{ $search }}</strong>
                 </span>
             @endif
@@ -28,11 +28,11 @@
             @endif
         </div>
         <div class="flex items-center">
-            <div class="flex">
+            <div class="flex text-gray-900">
                 <span>{{ __('frontend/blog/index.sort_by') }}:</span>
             </div>
             <div class="flex items-center border-r mx-2 px-2">
-                <span>{{ __('frontend/blog/index.popular') }}</span>
+                <span class="text-gray-900">{{ __('frontend/blog/index.popular') }}</span>
                 <button class="ml-1" wire:click="togglePopular">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor"
@@ -43,7 +43,7 @@
                 </button>
             </div>
             <div class="flex items-center">
-                <span>{{ __('frontend/blog/index.order') }}</span>
+                <span class="text-gray-900">{{ __('frontend/blog/index.order') }}</span>
                 <button class="ml-1" wire:click="toggleSort">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor"
