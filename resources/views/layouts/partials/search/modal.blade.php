@@ -14,9 +14,11 @@
             x-transition:leave="transition ease-in duration-200 transform"
             x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
             x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-            class="inline-block w-full max-w-xl p-8 my-20 overflow-hidden text-left transition-all transform bg-white rounded-lg shadow-xl 2xl:max-w-2xl">
+            class="inline-block w-full max-w-xl p-8 min-h-[64vh] my-20 overflow-hidden text-left transition-all transform bg-white rounded-lg shadow-xl 2xl:max-w-2xl">
             <div class="flex items-center justify-between space-x-4 relative">
-
+                <p class="font-bold text-xl mb-5">
+                    {{ __('frontend/layout.search_title') }}
+                </p>
                 <button x-on:click="modalOpen = false"
                     class="absolute -right-6 -top-6 text-gray-600 focus:outline-none hover:text-gray-700">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"

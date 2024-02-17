@@ -1,12 +1,11 @@
 <x-app-layout title="Blog">
-    <div class="w-full grid grid-cols-4 gap-10">
-        <div class="md:col-span-3 col-span-4 px-2">
-            <livewire:blog.list-post/>
+    <div class="w-full grid grid-cols-4">
+        <div class="md:col-span-3 col-span-4">
+            <livewire:blog.list-post />
         </div>
-        <div class="md:block hidden col-span-4 md:col-span-1 px-3 md:px-6 space-y-4
-            py-6 md:border-l border-gray-100 h-screen sticky top-0 bg-white shadow-lg rounded-md">
-            {{-- @include('blogs.posts.partials.search-box')
-            <hr> --}}
+        <div
+            class="md:block hidden col-span-4 md:col-span-1 px-3
+            md:border-l-2 border-gray-100 dark:border-gray-200 rounded-r h-screen sticky top-0 bg-white">
             @include('blogs.posts.partials.categories')
         </div>
     </div>

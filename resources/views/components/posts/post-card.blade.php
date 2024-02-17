@@ -6,38 +6,30 @@
 
 <div {{ $attributes->merge(['class' => $classes]) }}>
     <a wire:navigate class="rounded-md" href="{{ route('posts.show', $post->slug) }}" title="{{ $post->title }}">
-        <figure class="w-full">
-            <img class="w-full rounded-t-md" src="{{ $post->getThumbnail() }}" alt="{{ $post->title }}" width="640"
-                height="480">
-        </figure>
+        <div class="p-3">
+            <figure class="">
+                <img class="w-full rounded-xl group-hover:scale-[1.0] transition-all" src="{{ $post->getThumbnail() }}"
+                    alt="{{ $post->title }}">
+            </figure>
+        </div>
+        <div class="p-3">
+            <div class="">
+                <div class="flex flex-wrap items-center justify-between gap-x-8 gap-y-3">
+                    <p class="text-gray-800 text-sm flex items-center">
+                        <x-icons.calendar />
+                        <time>{{ $post->created_at->format('d-m-Y') }}</time>
+                    </p>
+                    <p class="text-gray-800 text-sm flex items-center">
+                        <x-icons.clock /> {{ $post->time_to_read }}
+                    </p>
+                </div>
+            </div>
+            <div class="mt-3">
+                <a wire:navigate href="{{ route('posts.show', $post->slug) }}" title="{{ $post->title }}"
+                    class="text-xl group-hover:text-blue-500 underline-title1 font-semibold text-gray-950 relative cursor-pointer pb-1">
+                    {{ $post->title }}
+                </a>
+            </div>
+        </div>
     </a>
-    <div class="mt-3 p-2">
-        <div>
-            <div class="flex items-center mb-3 gap-x-2">
-                <ul class="tags">
-                    @foreach ($post->categories as $category)
-                        <x-posts.category-badge :category="$category" />
-                    @endforeach
-                </ul>
-            </div>
-            <div class="flex flex-wrap items-center justify-between gap-x-8 gap-y-3">
-                <p class="text-gray-800 text-sm flex items-center">
-                    <x-icons.calendar />
-                    <time>{{ $post->created_at->format('d-m-Y') }}</time>
-                </p>
-                <p class="text-gray-800 text-sm flex items-center">
-                    <x-icons.clock /> {{ $post->time_to_read }}
-                </p>
-            </div>
-        </div>
-        <div class="mt-3">
-            <a href="{{ route('posts.show', $post->slug) }}" title="{{ $post->title }}"
-                class="text-xl underline-title font-semibold text-gray-950 relative cursor-pointer pb-1">
-                {{ $post->title }}
-            </a>
-        </div>
-
-    </div>
-
-
 </div>

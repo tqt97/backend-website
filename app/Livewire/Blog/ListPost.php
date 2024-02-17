@@ -64,7 +64,7 @@ class ListPost extends Component
             ->when($this->popular, fn ($q) => $q->popular())
             ->search($this->search)
             ->orderBy('published_at', $this->sort)
-            ->paginate(9);
+            ->paginate(10);
     }
 
     #[Computed()]
