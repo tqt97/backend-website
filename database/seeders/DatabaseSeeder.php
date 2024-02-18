@@ -19,13 +19,13 @@ class DatabaseSeeder extends Seeder
     {
 //         $users = User::factory(10)->create();
 
-        $categories = Category::factory(10)->create();
+        // $categories = Category::factory(10)->create();
 
-        $tags = Tag::factory(10)->create();
+        // $tags = Tag::factory(10)->create();
 
-        $comments = Comment::factory(10)->create();
+        // $comments = Comment::factory(10)->create();
 
-        $posts = Post::factory(10)->create();
+        // $posts = Post::factory(10)->create();
 
         // User::factory()
         //     ->has(Post::factory()->count(10))
@@ -49,6 +49,16 @@ class DatabaseSeeder extends Seeder
         //     ->has(Post::factory(10)->recycle(Category::factory()))
         //     ->has(Comment::factory(10)->recycle(Post::factory()))
         //     ->create();
+
+        User::factory(10)
+            ->has(
+                Post::factory(2)
+                    ->hasComments(1)
+                    ->hasTags(1)
+                    ->hasCategories(1)
+            )
+            ->hasLikes(2)
+            ->create();
 
         User::factory()->create([
             'name' => 'Tuantq',
